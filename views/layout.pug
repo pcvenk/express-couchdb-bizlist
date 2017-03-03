@@ -5,12 +5,6 @@ html
         link(rel='stylesheet', href='/bower_components/foundation/css/foundation.min.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        .errors
-            if errors
-                each error, i in errors
-                    .alert-box.alert.radius(data-alert='') #{error.msg}
-                        a.close(href='#') &times;
-
         block content
 
         script(src='/bower_components/modernizr/modernizr.js')

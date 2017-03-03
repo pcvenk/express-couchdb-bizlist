@@ -25,7 +25,7 @@ router.post('/create', function(req, res){
       errors: errors
     });
   } else {
-    res.render()
+    res.send('All is well');
   }
 });
 

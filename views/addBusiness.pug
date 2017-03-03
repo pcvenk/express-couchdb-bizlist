@@ -1,7 +1,7 @@
 extends layout
 
 block content
-    h1.text-center  Add Business
+    h1.text-center.main-title  Add Business
     form(method='POST', action='/business/create')
         .row
             .large-6.large-centered.columns
@@ -34,6 +34,10 @@ block content
                 label
                     | ZIP Code
                     input(type='text', name='zip')
-
-                button.small.button(type='submit')
+                if errors
+                    each error, i in errors
+                        .alert-box.alert.round(data-alert='') #{error.msg}
+                            a.close(href='#') &times;
+                button.small.button.round(type='submit')
                     | Create
+
