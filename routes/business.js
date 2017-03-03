@@ -6,9 +6,27 @@ router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
 
-//ADD ROUTE
-router.get('/add', function(req, res) {
+//NEW ROUTE
+router.get('/new', function(req, res) {
   res.render('addBusiness');
+});
+
+//CREATE ROUTE
+router.post('/create', function(req, res){
+
+  req.checkBody('name', 'Name field is required').notEmpty();
+  req.checkBody('category', 'Category field is required').notEmpty();
+  req.checkBody('city', 'City field is required').notEmpty();
+
+  var errors = req.validationErrors();
+
+  if(errors){
+    res.render('addBusiness', {
+      errors: errors
+    });
+  } else {
+    res.render()
+  }
 });
 
 

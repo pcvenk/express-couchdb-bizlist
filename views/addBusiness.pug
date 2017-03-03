@@ -1,10 +1,10 @@
 extends layout
 
 block content
-    h1  Add Business
-    form(method='POST', action='/business/add')
+    h1.text-center  Add Business
+    form(method='POST', action='/business/create')
         .row
-            .large-6.columns
+            .large-6.large-centered.columns
                 label
                     | Business Name
                     input(type='text', placeholder='Add a name for your business', name='name')
