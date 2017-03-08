@@ -5,6 +5,9 @@ html
         link(rel='stylesheet', href='/bower_components/foundation/css/foundation.min.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
+
+        != messages()
+
         block content
 
         script(src='/bower_components/modernizr/modernizr.js')
