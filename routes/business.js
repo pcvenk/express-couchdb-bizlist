@@ -25,8 +25,7 @@ router.get('/', function (req, res) {
     couch.get(dbName, viewUrl, queryOptions).then(({data, headers, status}) => {
         // console.log(data.rows);
         res.render('business', {
-            businesses: data.rows,
-            success: req.flash('success')
+            businesses: data.rows
         });
     }, err => {
         res.send(err);
@@ -65,6 +64,7 @@ router.post('/create', function (req, res) {
         }).then(({data, headers, status}) => {
             req.flash('success', 'Business successfully added');
             res.redirect('/business');
+
         }, err => {
             res.send(err);
         });
