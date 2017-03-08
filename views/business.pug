@@ -1,4 +1,9 @@
 extends layout
 
 block content
-    h1 Business Name
+    h1 Business List
+
+    ul.listings
+        each business, i in businesses
+            li
+                a(href='/business/show/'+business.value._id) #{business.value.name}
