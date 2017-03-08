@@ -71,6 +71,7 @@ router.post('/create', function (req, res) {
             req.flash('success', 'Business successfully added');
             res.redirect('/business');
             router.locals.flashmsg = req.flash('success');
+            console.log('*******');
             console.log(router.locals.flashmsg);
 
         }, err => {
