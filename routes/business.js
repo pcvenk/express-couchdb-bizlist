@@ -23,9 +23,10 @@ router.get('/', function (req, res) {
     const queryOptions = {};
 
     couch.get(dbName, viewUrl, queryOptions).then(({data, headers, status}) => {
-        console.log(data.rows);
+        // console.log(data.rows);
         res.render('business', {
-            businesses: data.rows
+            businesses: data.rows,
+            success: req.flash('success')
         });
     }, err => {
         res.send(err);

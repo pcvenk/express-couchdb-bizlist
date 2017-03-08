@@ -6,7 +6,9 @@ html
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
 
-        != messages()
+        if success
+            .alert-box.alert.round #{success}
+
 
         block content
 
