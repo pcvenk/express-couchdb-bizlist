@@ -15,6 +15,8 @@ const couch = new NodeCouchDb({
     }
 });
 
+var flashmsg = undefined;
+
 //INDEX ROUTE
 router.get('/', function (req, res) {
     const dbName = "bizlist";
@@ -25,8 +27,12 @@ router.get('/', function (req, res) {
     couch.get(dbName, viewUrl, queryOptions).then(({data, headers, status}) => {
         // console.log(data.rows);
         res.render('business', {
-            businesses: data.rows
+            businesses: data.rows,
+            msgdisplay: flashmsg
         });
+        console.log('========');
+        console.log(req.flash('success'));
+
     }, err => {
         res.send(err);
     });
@@ -64,12 +70,15 @@ router.post('/create', function (req, res) {
         }).then(({data, headers, status}) => {
             req.flash('success', 'Business successfully added');
             res.redirect('/business');
+            router.locals.flashmsg = req.flash('success');
+            console.log(router.locals.flashmsg);
 
         }, err => {
             res.send(err);
         });
     }
 });
+
 
 
 module.exports = router;

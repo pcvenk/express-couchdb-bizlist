@@ -6,7 +6,13 @@ html
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
 
-        != messages()
+        script(type="text/javascript").
+        if msgdisplay
+            .alert-box.alert.round(data-alert='')
+                #{msgdisplay}
+                a.close(href='#') &times;
+
+
 
         block content
 
