@@ -17,7 +17,18 @@ const couch = new NodeCouchDb({
 
 //INDEX ROUTE
 router.get('/', function (req, res) {
-    res.render('business');
+    const dbName = "bizlist";
+    const viewUrl = "_design/allbusiness/_view/all";
+
+    const queryOptions = {};
+
+    couch.get(dbName, viewUrl, queryOptions).then(({data, headers, status}) => {
+        res.render('business', {
+            businesses: data.rows
+        });
+    }, err => {
+        res.send(err);
+    });
 });
 
 //NEW ROUTE
