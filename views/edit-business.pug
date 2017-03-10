@@ -1,0 +1,46 @@
+extends layout
+
+block content
+    h1.text-center.main-title  Edit Business
+    form(method='POST', action='/business/update/:id')
+        .row
+            .large-6.large-centered.columns
+                label
+                    | Business Name
+                    input(type='text', placeholder='Add a name for your business', name='name'
+                    value=business.name)
+                label
+                    | Category
+                    select(name='category')
+                        option(disabled value) Select a category
+                        option(value='Accounting') Accounting
+                        option(value='Science') Science
+                        option(value='IT') IT
+                        option(value='Marketing') Marketing
+                        option(value='Healthcare') Healthcare
+                        option(value='Other') Other
+
+                label
+                    | Website
+                    input(type='text', name='website' value=business.website)
+                label
+                    | Phone
+                    input(type='text', name='phone' value=business.phone)
+                label
+                    | Address
+                    input(type='text', name='address' value=business.address)
+                label
+                    | City
+                    input(type='text', name='city' value=business.city)
+                label
+                    | ZIP Code
+                    input(type='text', name='zip' value=business.zip)
+                if errors
+                    each error, i in errors
+                        .alert-box.alert.round(data-alert='') #{error.msg}
+                            a.close(href='#') &times;
+                button.small.button.round(type='submit')
+                    | Save
+
+
+
