@@ -1,13 +1,14 @@
 extends layout
 
 block content
-    h1 Business List
+    .row
+        h1.text-center.main-title Business List
 
-    ul.listings
-        each business, i in businesses
-            li
-                a(href='/business/show/'+business.id) #{business.value.name}
-                br
-                | Location: #{business.value.city}, #{business.value.address}
-                br
-                | Phone: #{business.value.phone}
+        ul.listings
+            each business, i in businesses
+                li
+                    a(href='/business/show/'+business.id) #{business.value.name}
+                    br
+                    | Location: #{business.value.city}, #{business.value.address}
+                    br
+                    | Phone: #{business.value.phone}

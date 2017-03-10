@@ -5,14 +5,23 @@ html
         link(rel='stylesheet', href='/bower_components/foundation/css/foundation.min.css')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
+        .row
+            .nav-bar.right
+                ul.button-group
+                    li
+                        a.button.small(href="/") Home
+                    li
+                        a.button.small(href="/business") View all
+                    li
+                        a.button.small(href="/business/new") Add Listing
+            h1 BizList
+            hr.header
 
         script(type="text/javascript").
         if msgdisplay
             .alert-box.alert.round(data-alert='')
                 #{msgdisplay}
                 a.close(href='#') &times;
-
-
 
         block content
 

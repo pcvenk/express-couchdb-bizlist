@@ -28,3 +28,17 @@ ul.listings {
 .listings li:last-child{
   border: none;
 }
+
+.header {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.form-container{
+  display: inline !important;
+  margin-left: 10px;
+}
+
+ul.text-center {
+  list-style: none;
+}

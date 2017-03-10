@@ -1,22 +1,24 @@
 extends layout
 
 block content
-    a.button.tiny.round.warning(href="/business") Go Back
-    br
-    h1 #{business.name}
-    ul
-        li Category: #{business.category}
-        li Website: #{business.website}
-        li Phone: #{business.phone}
-    hr
-    h5 Location Info
-    ul
-        li #{business.address}
-        li #{business.city}
-        li #{business.zip}
+    .row
+        a.button.tiny.round.warning(href="/business") Go Back
+        br
+        h1.text-center.main-title #{business.name}
+        ul.text-center
+            li Category: #{business.category}
+            li Website: #{business.website}
+            li Phone: #{business.phone}
+        hr
+        h5.text-center.title Location Info
+        ul.text-center
+            li #{business.address}
+            li #{business.city}
+            li #{business.zip}
 
-    br
-    a.button.small.round(href="/business/edit/"+business._id) Edit
+        br
+        .row.text-center
+            a.button.small.round(href="/business/edit/"+business._id) Edit
 
-    form(method="post", action="/businesses/delete/"+business._id)
-        input.button.small.alert.round(type="submit", value="Delete")
+            form.form-container(method="post", action="/businesses/delete/"+business._id)
+                input.button.small.alert.round(type="submit", value="Delete")
