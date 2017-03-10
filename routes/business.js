@@ -80,6 +80,17 @@ router.post('/create', function (req, res) {
     }
 });
 
+//SHOW ROUTE
+router.get('/show/:id', function(req, res){
+    couch.get('bizlist', req.params.id).then(({data, headers, status}) => {
+        res.render('show-business', {
+            business: data
+        });
+    }, err => {
+        res.send(err);
+    });
+});
+
 
 
 module.exports = router;
