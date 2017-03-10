@@ -92,5 +92,16 @@ router.get('/show/:id', function(req, res, next){
 
 });
 
+//EDIT ROUTE
+router.get('/edit/:id', function(req, res){
+    couch.get('bizlist', req.params.id).then(({data, headers, status}) => {
+        res.render('edit-business', {
+            business: data
+        });
+    }, err => {
+        res.send(err);
+    });
+});
+
 
 module.exports = router;
