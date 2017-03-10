@@ -7,3 +7,7 @@ block content
         each business, i in businesses
             li
                 a(href='/business/show/'+business.value._id) #{business.value.name}
+                br
+                | Location: #{business.value.city}, #{business.value.address}
+                br
+                | Phone: #{business.value.phone}
