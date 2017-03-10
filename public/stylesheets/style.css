@@ -20,6 +20,10 @@ ul.listings {
   border: 1px solid lightgray;
 }
 
+ul {
+  margin-left: 0 !important;
+}
+
 .listings li {
   margin-bottom: 10px;
   border-bottom: 1px dashed lightgray;
@@ -41,4 +45,9 @@ ul.listings {
 
 ul.text-center {
   list-style: none;
+}
+
+.hr {
+  width: 50%;
+  margin: 10px auto;
 }
