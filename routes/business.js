@@ -103,5 +103,11 @@ router.get('/edit/:id', function(req, res){
     });
 });
 
+//UPDATE ROUTE
+router.post('/update/:id', function(req, res){
+    //todo finish the update route!!!!
+    res.send('you hit the update route');
+});
+
 
 module.exports = router;
