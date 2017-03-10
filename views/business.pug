@@ -6,7 +6,7 @@ block content
     ul.listings
         each business, i in businesses
             li
-                a(href='/business/show/'+business.value._id) #{business.value.name}
+                a(href='/business/show/'+business.id) #{business.value.name}
                 br
                 | Location: #{business.value.city}, #{business.value.address}
                 br
