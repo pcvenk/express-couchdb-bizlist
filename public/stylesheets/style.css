@@ -11,3 +11,20 @@ a {
   font-weight: 900;
   letter-spacing: 2px;
 }
+
+ul.listings {
+  padding: 40px;
+  background-color: #eaeaea;
+  margin: 5px;
+  list-style: none;
+  border: 1px solid lightgray;
+}
+
+.listings li {
+  margin-bottom: 10px;
+  border-bottom: 1px dashed lightgray;
+}
+
+.listings li:last-child{
+  border: none;
+}
