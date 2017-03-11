@@ -158,5 +158,19 @@ router.post('/update/:id', function(req, res){
     }
 });
 
+//DELETE ROUTE
+router.post('/delete/:id', function(req, res, next) {
+    couch.get('bizlist', req.params.id).then(({data, headers, status}) => {
+        couch.del('bizlist', req.params.id, data._rev).then(({data, headers, status}) => {
+            req.flash('success', 'Business Removed');
+            res.redirect('/business');
+        }, err => {
+            res.send(err);
+        });
+    }, err => {
+        res.send(err);
+    });
+});
+
 
 module.exports = router;

@@ -4,7 +4,6 @@
     <list default="true" id="df62f95f-78c3-4cd0-93ed-16e7426221c0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/business.js" afterPath="$PROJECT_DIR$/routes/business.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/edit-business.pug" afterPath="$PROJECT_DIR$/views/edit-business.pug" />
     </list>
     <ignored path="bizlist.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,8 +89,8 @@
       <file leaf-file-name="business.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/business.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+            <state relative-caret-position="241">
+              <caret line="165" column="35" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -378,12 +377,12 @@
       <workItem from="1488530624166" duration="10274000" />
       <workItem from="1488961996017" duration="17469000" />
       <workItem from="1489152198087" duration="3037000" />
-      <workItem from="1489227252473" duration="1778000" />
+      <workItem from="1489227252473" duration="1957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34186000" />
+    <option name="totallyTimeSpent" value="34365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="570" y="23" width="799" height="873" extended-state="0" />
@@ -781,8 +780,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/business.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state relative-caret-position="241">
+          <caret line="165" column="35" selection-start-line="165" selection-start-column="35" selection-end-line="165" selection-end-column="35" />
           <folding />
         </state>
       </provider>
