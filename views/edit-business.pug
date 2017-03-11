@@ -2,7 +2,7 @@ extends layout
 
 block content
     h1.text-center.main-title  Edit Business
-    form(method='POST', action='/business/update/:id')
+    form(method='POST', action='/business/update/'+business._id)
         .row
             .large-6.large-centered.columns
                 label

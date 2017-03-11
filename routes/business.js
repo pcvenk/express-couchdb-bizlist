@@ -70,6 +70,8 @@ router.post('/create', function (req, res) {
         }).then(({data, headers, status}) => {
             req.flash('success', 'Business successfully added');
             res.redirect('/business');
+
+            //todo fix the display msg
             router.locals.flashmsg = req.flash('success');
             console.log('*******');
             console.log(router.locals.flashmsg);
@@ -105,8 +107,55 @@ router.get('/edit/:id', function(req, res){
 
 //UPDATE ROUTE
 router.post('/update/:id', function(req, res){
-    //todo finish the update route!!!!
-    res.send('you hit the update route');
+
+    //validation checking
+    req.checkBody('name', 'Name field is required').notEmpty();
+    req.checkBody('category', 'Category field is required').notEmpty();
+    req.checkBody('city', 'City field is required').notEmpty();
+
+    var errors = req.validationErrors();
+
+    if (errors) {
+        //grabbing the selected biz
+        couch.get('bizlist', req.params.id).then(({data, headers, status}) => {
+            res.render('edit-business', {
+                business: data,
+                errors: errors
+            });
+        }, err => {
+            res.send(err);
+        });
+
+    } else{
+        couch.get('bizlist', req.params.id).then(({data, headers, status}) => {
+            couch.update('bizlist', {
+                _id: req.params.id,
+                _rev: data._rev,
+                name: req.body.name,
+                category: req.body.category,
+                website: req.body.website,
+                phone: req.body.phone,
+                address: req.body.address,
+                city: req.body.city,
+                state: req.body.state,
+                zip: req.body.zip
+
+            }).then(({data, headers, status}) => {
+                req.flash('success', 'Business Updated');
+                res.redirect('/business');
+
+                //todo fix the display msg
+                // router.locals.flashmsg = req.flash('success');
+                console.log('*******');
+                console.log(router.locals.flashmsg);
+
+            }, err => {
+                res.send(err);
+            });
+        }, err => {
+            res.send(err);
+        });
+    }
 });
 
 
